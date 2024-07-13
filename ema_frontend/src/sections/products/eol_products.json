@@ -1,0 +1,929 @@
+[
+    {
+        "name": "Adobe ColdFusion"
+    },
+    {
+        "name": "Akeneo PIM"
+    },
+    {
+        "name": "Alibaba Dragonwell"
+    },
+    {
+        "name": "AlmaLinux OS"
+    },
+    {
+        "name": "Alpine Linux"
+    },
+    {
+        "name": "Amazon CDK"
+    },
+    {
+        "name": "Amazon Corretto"
+    },
+    {
+        "name": "Amazon EKS"
+    },
+    {
+        "name": "Amazon Glue"
+    },
+    {
+        "name": "Amazon Kindle"
+    },
+    {
+        "name": "Amazon Linux"
+    },
+    {
+        "name": "Amazon Neptune"
+    },
+    {
+        "name": "Amazon RDS for MySQL"
+    },
+    {
+        "name": "Amazon RDS for PostgreSQL"
+    },
+    {
+        "name": "Android OS"
+    },
+    {
+        "name": "Angular"
+    },
+    {
+        "name": "AngularJS"
+    },
+    {
+        "name": "Ansible"
+    },
+    {
+        "name": "Ansible-core"
+    },
+    {
+        "name": "antiX Linux"
+    },
+    {
+        "name": "Apache ActiveMQ"
+    },
+    {
+        "name": "Apache Airflow"
+    },
+    {
+        "name": "Apache Camel"
+    },
+    {
+        "name": "Apache Cassandra"
+    },
+    {
+        "name": "Apache Flink"
+    },
+    {
+        "name": "Apache Groovy"
+    },
+    {
+        "name": "Apache Hadoop"
+    },
+    {
+        "name": "Apache HBase"
+    },
+    {
+        "name": "Apache Hop"
+    },
+    {
+        "name": "Apache HTTP Server"
+    },
+    {
+        "name": "Apache Kafka"
+    },
+    {
+        "name": "Apache Log4j"
+    },
+    {
+        "name": "Apache Maven"
+    },
+    {
+        "name": "Apache Solr"
+    },
+    {
+        "name": "Apache Spark"
+    },
+    {
+        "name": "Apache Struts"
+    },
+    {
+        "name": "Apache Tomcat"
+    },
+    {
+        "name": "Apache ZooKeeper"
+    },
+    {
+        "name": "API Platform"
+    },
+    {
+        "name": "Apple iOS"
+    },
+    {
+        "name": "Apple iPad"
+    },
+    {
+        "name": "Apple iPadOS"
+    },
+    {
+        "name": "Apple iPhone"
+    },
+    {
+        "name": "Apple macOS"
+    },
+    {
+        "name": "Apple Watch"
+    },
+    {
+        "name": "Apple watchOS"
+    },
+    {
+        "name": "ArangoDB"
+    },
+    {
+        "name": "Argo CD"
+    },
+    {
+        "name": "Artifactory"
+    },
+    {
+        "name": "AWS Lambda"
+    },
+    {
+        "name": "Azul Zulu"
+    },
+    {
+        "name": "Azure DevOps Server"
+    },
+    {
+        "name": "Azure Kubernetes Service"
+    },
+    {
+        "name": "Bazel"
+    },
+    {
+        "name": "Bellsoft Liberica JDK"
+    },
+    {
+        "name": "Blender"
+    },
+    {
+        "name": "Bootstrap"
+    },
+    {
+        "name": "Bun"
+    },
+    {
+        "name": "CakePHP"
+    },
+    {
+        "name": "CentOS"
+    },
+    {
+        "name": "CentOS Stream"
+    },
+    {
+        "name": "Centreon"
+    },
+    {
+        "name": "cert-manager"
+    },
+    {
+        "name": "CFEngine"
+    },
+    {
+        "name": "Chef Infra Server"
+    },
+    {
+        "name": "Citrix Virtual Apps and Desktops"
+    },
+    {
+        "name": "CKEditor"
+    },
+    {
+        "name": "ClamAV"
+    },
+    {
+        "name": "CockroachDB"
+    },
+    {
+        "name": "Composer"
+    },
+    {
+        "name": "Confluence"
+    },
+    {
+        "name": "containerd"
+    },
+    {
+        "name": "Contao"
+    },
+    {
+        "name": "Couchbase Server"
+    },
+    {
+        "name": "Craft CMS"
+    },
+    {
+        "name": "dbt Core"
+    },
+    {
+        "name": "Debian"
+    },
+    {
+        "name": "Dependency-Track"
+    },
+    {
+        "name": "Devuan"
+    },
+    {
+        "name": "Django"
+    },
+    {
+        "name": "Docker Engine"
+    },
+    {
+        "name": "Drupal"
+    },
+    {
+        "name": "Drush"
+    },
+    {
+        "name": "Eclipse Jetty"
+    },
+    {
+        "name": "Eclipse Temurin"
+    },
+    {
+        "name": "Elastic Beats"
+    },
+    {
+        "name": "Elasticsearch"
+    },
+    {
+        "name": "Electron"
+    },
+    {
+        "name": "Elixir"
+    },
+    {
+        "name": "Ember"
+    },
+    {
+        "name": "Envoy"
+    },
+    {
+        "name": "Erlang"
+    },
+    {
+        "name": "etcd"
+    },
+    {
+        "name": "EuroLinux"
+    },
+    {
+        "name": "Exim"
+    },
+    {
+        "name": "Fairphone"
+    },
+    {
+        "name": "Fedora Linux"
+    },
+    {
+        "name": "FFmpeg"
+    },
+    {
+        "name": "FileMaker Platform"
+    },
+    {
+        "name": "Firefox"
+    },
+    {
+        "name": "Fluent Bit"
+    },
+    {
+        "name": "Flux"
+    },
+    {
+        "name": "FortiOS"
+    },
+    {
+        "name": "FreeBSD"
+    },
+    {
+        "name": "Gerrit"
+    },
+    {
+        "name": "GitLab"
+    },
+    {
+        "name": "Go"
+    },
+    {
+        "name": "GoAccess"
+    },
+    {
+        "name": "Godot"
+    },
+    {
+        "name": "Google Container-Optimized OS (COS)"
+    },
+    {
+        "name": "Google Kubernetes Engine"
+    },
+    {
+        "name": "Google Nexus"
+    },
+    {
+        "name": "Google Pixel"
+    },
+    {
+        "name": "Gorilla Toolkit"
+    },
+    {
+        "name": "GraalVM"
+    },
+    {
+        "name": "Gradle"
+    },
+    {
+        "name": "Grafana"
+    },
+    {
+        "name": "Grails Framework"
+    },
+    {
+        "name": "Graylog"
+    },
+    {
+        "name": "GStreamer"
+    },
+    {
+        "name": "HAProxy"
+    },
+    {
+        "name": "Hashicorp Consul"
+    },
+    {
+        "name": "Hashicorp Terraform"
+    },
+    {
+        "name": "Hashicorp Vault"
+    },
+    {
+        "name": "IBM AIX"
+    },
+    {
+        "name": "IBM iSeries"
+    },
+    {
+        "name": "IBM Semeru Runtime"
+    },
+    {
+        "name": "Icinga Web"
+    },
+    {
+        "name": "Intel Processors"
+    },
+    {
+        "name": "Internet Explorer"
+    },
+    {
+        "name": "Ionic Framework"
+    },
+    {
+        "name": "ISC DHCP"
+    },
+    {
+        "name": "Istio"
+    },
+    {
+        "name": "Jekyll"
+    },
+    {
+        "name": "Jenkins"
+    },
+    {
+        "name": "JHipster"
+    },
+    {
+        "name": "Jira Software"
+    },
+    {
+        "name": "Joomla!"
+    },
+    {
+        "name": "jQuery"
+    },
+    {
+        "name": "JReleaser"
+    },
+    {
+        "name": "KDE Plasma"
+    },
+    {
+        "name": "KEDA"
+    },
+    {
+        "name": "Keycloak"
+    },
+    {
+        "name": "Kibana"
+    },
+    {
+        "name": "Kirby"
+    },
+    {
+        "name": "Kong Gateway"
+    },
+    {
+        "name": "Kotlin"
+    },
+    {
+        "name": "Kubernetes"
+    },
+    {
+        "name": "Kubernetes CSI Node Driver Registrar"
+    },
+    {
+        "name": "Kubernetes Node Feature Discovery"
+    },
+    {
+        "name": "Laravel"
+    },
+    {
+        "name": "LibreOffice"
+    },
+    {
+        "name": "LineageOS"
+    },
+    {
+        "name": "Linux Kernel"
+    },
+    {
+        "name": "Linux Mint"
+    },
+    {
+        "name": "Logstash"
+    },
+    {
+        "name": "Looker"
+    },
+    {
+        "name": "Lua"
+    },
+    {
+        "name": "Mageia"
+    },
+    {
+        "name": "Magento"
+    },
+    {
+        "name": "MariaDB"
+    },
+    {
+        "name": "Mastodon"
+    },
+    {
+        "name": "Matomo"
+    },
+    {
+        "name": "Mattermost"
+    },
+    {
+        "name": "MediaWiki"
+    },
+    {
+        "name": "Meilisearch"
+    },
+    {
+        "name": "Memcached"
+    },
+    {
+        "name": "Micronaut Framework"
+    },
+    {
+        "name": "Microsoft .NET"
+    },
+    {
+        "name": "Microsoft .NET Framework"
+    },
+    {
+        "name": "Microsoft Build of OpenJDK"
+    },
+    {
+        "name": "Microsoft Exchange"
+    },
+    {
+        "name": "Microsoft Office"
+    },
+    {
+        "name": "Microsoft PowerShell"
+    },
+    {
+        "name": "Microsoft SharePoint"
+    },
+    {
+        "name": "Microsoft SQL Server"
+    },
+    {
+        "name": "Microsoft Surface"
+    },
+    {
+        "name": "Microsoft Visual Studio"
+    },
+    {
+        "name": "Microsoft Windows"
+    },
+    {
+        "name": "Microsoft Windows Embedded"
+    },
+    {
+        "name": "Microsoft Windows Server"
+    },
+    {
+        "name": "MongoDB Server"
+    },
+    {
+        "name": "Moodle"
+    },
+    {
+        "name": "Motorola Mobility"
+    },
+    {
+        "name": "Mule Runtime"
+    },
+    {
+        "name": "MX Linux"
+    },
+    {
+        "name": "MySQL"
+    },
+    {
+        "name": "Neo4j"
+    },
+    {
+        "name": "NetBSD"
+    },
+    {
+        "name": "Netgear ReadyNAS"
+    },
+    {
+        "name": "Next.js"
+    },
+    {
+        "name": "Nextcloud"
+    },
+    {
+        "name": "Nexus Repository OSS"
+    },
+    {
+        "name": "nginx"
+    },
+    {
+        "name": "nix"
+    },
+    {
+        "name": "NixOS"
+    },
+    {
+        "name": "Node.js"
+    },
+    {
+        "name": "Nokia Mobile"
+    },
+    {
+        "name": "Nomad"
+    },
+    {
+        "name": "NumPy"
+    },
+    {
+        "name": "Nutanix AOS"
+    },
+    {
+        "name": "Nutanix Files"
+    },
+    {
+        "name": "Nutanix Prism Central"
+    },
+    {
+        "name": "Nuxt"
+    },
+    {
+        "name": "NVIDIA Driver"
+    },
+    {
+        "name": "NVIDIA GPUs"
+    },
+    {
+        "name": "OpenBSD"
+    },
+    {
+        "name": "OpenJDK builds from Oracle"
+    },
+    {
+        "name": "OpenSearch"
+    },
+    {
+        "name": "OpenSSL"
+    },
+    {
+        "name": "openSUSE"
+    },
+    {
+        "name": "OpenTofu"
+    },
+    {
+        "name": "OpenWrt"
+    },
+    {
+        "name": "OpenZFS"
+    },
+    {
+        "name": "OPNsense"
+    },
+    {
+        "name": "Oracle APEX"
+    },
+    {
+        "name": "Oracle Database"
+    },
+    {
+        "name": "Oracle JDK"
+    },
+    {
+        "name": "Oracle Linux"
+    },
+    {
+        "name": "Oracle Solaris"
+    },
+    {
+        "name": "oVirt"
+    },
+    {
+        "name": "Palo Alto Networks Cortex XDR agent"
+    },
+    {
+        "name": "Palo Alto Networks GlobalProtect App"
+    },
+    {
+        "name": "Palo Alto Networks PAN-OS"
+    },
+    {
+        "name": "PCI-DSS"
+    },
+    {
+        "name": "Perl"
+    },
+    {
+        "name": "PHP"
+    },
+    {
+        "name": "phpBB"
+    },
+    {
+        "name": "phpMyAdmin"
+    },
+    {
+        "name": "Plesk"
+    },
+    {
+        "name": "Pop!_OS"
+    },
+    {
+        "name": "Postfix"
+    },
+    {
+        "name": "PostgreSQL"
+    },
+    {
+        "name": "postmarketOS"
+    },
+    {
+        "name": "Prometheus"
+    },
+    {
+        "name": "Protractor"
+    },
+    {
+        "name": "Proxmox VE"
+    },
+    {
+        "name": "Puppet"
+    },
+    {
+        "name": "Python"
+    },
+    {
+        "name": "Qt"
+    },
+    {
+        "name": "Quarkus"
+    },
+    {
+        "name": "Quasar"
+    },
+    {
+        "name": "RabbitMQ"
+    },
+    {
+        "name": "Rancher"
+    },
+    {
+        "name": "Raspberry Pi"
+    },
+    {
+        "name": "React"
+    },
+    {
+        "name": "Red Hat build of OpenJDK"
+    },
+    {
+        "name": "Red Hat Enterprise Linux"
+    },
+    {
+        "name": "Red Hat JBoss Enterprise Application Platform"
+    },
+    {
+        "name": "Red Hat OpenShift"
+    },
+    {
+        "name": "Red Hat Satellite"
+    },
+    {
+        "name": "Redis"
+    },
+    {
+        "name": "Redmine"
+    },
+    {
+        "name": "Robo"
+    },
+    {
+        "name": "Rocket.Chat"
+    },
+    {
+        "name": "Rocky Linux"
+    },
+    {
+        "name": "ROS"
+    },
+    {
+        "name": "ROS 2"
+    },
+    {
+        "name": "Roundcube Webmail"
+    },
+    {
+        "name": "Ruby"
+    },
+    {
+        "name": "Ruby on Rails"
+    },
+    {
+        "name": "Rust"
+    },
+    {
+        "name": "Salt"
+    },
+    {
+        "name": "Samsung Mobile"
+    },
+    {
+        "name": "SapMachine"
+    },
+    {
+        "name": "Scala"
+    },
+    {
+        "name": "Shopware"
+    },
+    {
+        "name": "Silverstripe CMS"
+    },
+    {
+        "name": "Slackware Linux"
+    },
+    {
+        "name": "SonarQube"
+    },
+    {
+        "name": "Sourcegraph"
+    },
+    {
+        "name": "Splunk"
+    },
+    {
+        "name": "Spring Boot"
+    },
+    {
+        "name": "Spring Framework"
+    },
+    {
+        "name": "SQLite"
+    },
+    {
+        "name": "Squid"
+    },
+    {
+        "name": "SteamOS"
+    },
+    {
+        "name": "SUSE Linux Enterprise Server"
+    },
+    {
+        "name": "Symfony"
+    },
+    {
+        "name": "Tails"
+    },
+    {
+        "name": "Tarantool"
+    },
+    {
+        "name": "Telegraf"
+    },
+    {
+        "name": "Traefik"
+    },
+    {
+        "name": "Twig"
+    },
+    {
+        "name": "TYPO3"
+    },
+    {
+        "name": "Ubuntu"
+    },
+    {
+        "name": "Umbraco CMS"
+    },
+    {
+        "name": "Unity"
+    },
+    {
+        "name": "UnrealIRCd"
+    },
+    {
+        "name": "Varnish"
+    },
+    {
+        "name": "Veeam Backup & Replication"
+    },
+    {
+        "name": "Visual COBOL"
+    },
+    {
+        "name": "VMware Cloud Foundation"
+    },
+    {
+        "name": "VMware ESXi"
+    },
+    {
+        "name": "VMware Harbor Registry"
+    },
+    {
+        "name": "VMware Horizon"
+    },
+    {
+        "name": "VMware Photon"
+    },
+    {
+        "name": "VMware Site Recovery Manager"
+    },
+    {
+        "name": "VMware vCenter Server"
+    },
+    {
+        "name": "Vue"
+    },
+    {
+        "name": "Vuetify"
+    },
+    {
+        "name": "Wagtail"
+    },
+    {
+        "name": "WeeChat"
+    },
+    {
+        "name": "WordPress"
+    },
+    {
+        "name": "XCP-ng"
+    },
+    {
+        "name": "Yarn"
+    },
+    {
+        "name": "Yocto Project"
+    },
+    {
+        "name": "Zabbix"
+    },
+    {
+        "name": "Zerto"
+    }
+]
