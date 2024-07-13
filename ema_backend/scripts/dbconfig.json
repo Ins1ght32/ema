@@ -1,0 +1,7 @@
+{
+    "server": "192.168.1.31",
+    "username": "root",
+    "password": "root",
+    "db": "ema_eos",
+    "port": "3307"
+}
