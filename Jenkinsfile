@@ -10,6 +10,7 @@ pipeline {
 		stage('Stop & Remove Current Test Environment') {
             steps {
                 script {
+					echo "Stop & Remove Current Test Environment"
                     // Print the current directory and list files
                     //sh 'pwd'
                     //sh 'ls -la'
@@ -29,7 +30,7 @@ pipeline {
 		stage('Install Dependencies & Deploy New Test Environment') {
             steps {
                 script {
-				echo "Entered Install Dependencies & Deploy New Test Environment Stage"
+					echo "Entered Install Dependencies & Deploy New Test Environment Stage"
                     // Build and start services defined in docker-compose-dev.yml
                     //sh 'docker compose -f ${DOCKER_COMPOSE_FILE} up --build -d'
                 }
