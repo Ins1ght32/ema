@@ -7,32 +7,39 @@ pipeline {
 			}
 		}
 		
-		stage('Stop & Remove Current Test Environment') {
+		stages {
+        stage('Check and Run Front End') {
             steps {
                 script {
-					echo "Stop & Remove Current Test Environment"
-                    // Print the current directory and list files
-                    //sh 'pwd'
-                    //sh 'ls -la'
-                    //echo "DEV_DOCKER_COMPOSE_FILE: ${env.DOCKER_COMPOSE_FILE}"
-                    //def devcontainersRunning = sh(script: 'docker compose -f ${DOCKER_COMPOSE_FILE} ps -q', returnStdout: true).trim()
-                    //if (devcontainersRunning) {
-                    //    echo "Containers defined in the Dev Docker Compose file are running. Bringing them down..."
-                    //    sh "docker compose -f ${DOCKER_COMPOSE_FILE} down"
-                    //} else{
-                    //    echo "No containers defined in the Docker Compose file are running. Skipping this step."
+                    // Check if 'yarn dev' is running
+                    //def isYarnDevRunning = bat(script: 'tasklist /FI "IMAGENAME eq node.exe" /FI "WINDOWTITLE eq yarn dev*"', returnStatus: true) == 0
+
+                    //if (!isYarnDevRunning) {
+                        // Change to the front end directory and run 'yarn dev'
+                    //    dir('C:\\path\\to\\your\\frontend\\directory') {
+                    //        bat 'start yarn dev'
+                        }
+                    //} else {
+                    //    echo "Front end 'yarn dev' is already running."
                     //}
-                    //sh 'docker system prune -f'
                 }
             }
         }
-		
-		stage('Install Dependencies & Deploy New Test Environment') {
+
+        stage('Check and Run Back End') {
             steps {
                 script {
-					echo "Entered Install Dependencies & Deploy New Test Environment Stage"
-                    // Build and start services defined in docker-compose-dev.yml
-                    //sh 'docker compose -f ${DOCKER_COMPOSE_FILE} up --build -d'
+                    // Check if 'node.exe' is running
+                    def isNodeAppRunning = bat(script: 'tasklist /FI "IMAGENAME eq node.exe"', returnStatus: true) == 0
+
+                    if (!isNodeAppRunning) {
+                        // Change to the back end directory and run 'node app.js'
+                        dir('C:\\path\\to\\your\\backend\\directory') {
+                            bat 'start node app.js'
+                        }
+                    } else {
+                        echo "Back end 'node app.js' is already running."
+                    }
                 }
             }
         }
