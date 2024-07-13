@@ -10,7 +10,7 @@ pipeline {
 		stage('Run Unit Tests'){
 			steps{
 				script{
-					sh "Entered Unit Test Stage"
+					echo "Entered Unit Test Stage"
 				}
 			}
 		}
