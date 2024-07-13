@@ -34,7 +34,7 @@ pipeline {
 
                     if (!isNodeAppRunning) {
                         // Change to the back end directory and run 'node app.js'
-                        dir("C:\\Users\Joseph Lim\Documents\GitHub\ema\ema_backend") {
+                        dir("C:\\Users\\Joseph Lim\\Documents\\GitHub\\ema\\ema_backend") {
                             bat 'start node app.js'
                         }
                     } else {
