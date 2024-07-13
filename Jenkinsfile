@@ -7,6 +7,14 @@ pipeline {
 			}
 		}
 		
+		stage('Run Unit Tests'){
+			steps{
+				script{
+					sh "Entered Unit Test Stage"
+				}
+			}
+		}
+		
 		stage('Code Quality Check via SonarQube') {
             		steps {
                 		script {
