@@ -7,6 +7,25 @@ pipeline {
 			}
 		}
 		
+		stage('Stop & Remove Current Test Environment') {
+            steps {
+                script {
+                    // Print the current directory and list files
+                    //sh 'pwd'
+                    //sh 'ls -la'
+                    //echo "DEV_DOCKER_COMPOSE_FILE: ${env.DOCKER_COMPOSE_FILE}"
+                    //def devcontainersRunning = sh(script: 'docker compose -f ${DOCKER_COMPOSE_FILE} ps -q', returnStdout: true).trim()
+                    //if (devcontainersRunning) {
+                    //    echo "Containers defined in the Dev Docker Compose file are running. Bringing them down..."
+                    //    sh "docker compose -f ${DOCKER_COMPOSE_FILE} down"
+                    //} else{
+                    //    echo "No containers defined in the Docker Compose file are running. Skipping this step."
+                    //}
+                    //sh 'docker system prune -f'
+                }
+            }
+        }
+		
 		stage('Install Dependencies & Deploy New Test Environment') {
             steps {
                 script {
