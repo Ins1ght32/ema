@@ -7,6 +7,16 @@ pipeline {
 			}
 		}
 		
+		stage('Install Dependencies & Deploy New Test Environment') {
+            steps {
+                script {
+				echo "Entered Install Dependencies & Deploy New Test Environment Stage"
+                    // Build and start services defined in docker-compose-dev.yml
+                    //sh 'docker compose -f ${DOCKER_COMPOSE_FILE} up --build -d'
+                }
+            }
+        }
+		
 		stage('Run Unit Tests'){
 			steps{
 				script{
