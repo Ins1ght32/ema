@@ -12,7 +12,7 @@ pipeline {
                 		script {
                     			def scannerHome = tool 'SonarQube';
                        			withSonarQubeEnv('SonarQube EMA') {
-                        			sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.python.coverage.reportPaths=${COVERAGE_REPORT_PATH}"
+                        			sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
                     			}
                 		}
             		}		
