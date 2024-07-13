@@ -1,26 +1,27 @@
 pipeline {
-	agent any
-	stages {
-		stage('Checkout SCM') {
-			steps {
-				git 'https://github.com/Ins1ght32/ema.git'
-			}
-		}
-		
+    agent any
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                git 'https://github.com/Ins1ght32/ema.git'
+            }
+        }
+        
         stage('Check and Run Front End') {
             steps {
                 script {
                     // Check if 'yarn dev' is running
-                    //def isYarnDevRunning = bat(script: 'tasklist /FI "IMAGENAME eq node.exe" /FI "WINDOWTITLE eq yarn dev*"', returnStatus: true) == 0
+                    def isYarnDevRunning = bat(script: 'tasklist /FI "IMAGENAME eq node.exe" /FI "WINDOWTITLE eq yarn dev*"', returnStatus: true) == 0
 
-                    //if (!isYarnDevRunning) {
+                    if (!isYarnDevRunning) {
                         // Change to the front end directory and run 'yarn dev'
-                    //    dir('C:\\path\\to\\your\\frontend\\directory') {
-                    //        bat 'start yarn dev'
+                        dir('C:\\path\\to\\your\\frontend\\directory') {
+                            bat 'start yarn dev'
                         }
-                    //} else {
-                    //    echo "Front end 'yarn dev' is already running."
-                    //}
+                    } else {
+                        echo "Front end 'yarn dev' is already running."
+                    }
                 }
             }
         }
@@ -42,35 +43,36 @@ pipeline {
                 }
             }
         }
-		
-		stage('Run Unit Tests'){
-			steps{
-				script{
-					echo "Entered Unit Test Stage"
-				}
-			}
-		}
-		
-		stage('Code Quality Check via SonarQube') {
-            		steps {
-                		script {
-                    			def scannerHome = tool 'SonarQube';
-                       			withSonarQubeEnv('SonarQube EMA') {
-                        			sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
-                    			}
-                		}
-            		}		
-        	}
-		
-		stage('OWASP DependencyCheck') {
-			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML --nvdApiKey 7ad48849-c21a-49f4-9ddb-85151d39d039 --noupdate --enableExperimental', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
-			}
-		}
-	}	
-	post {
-		success {
-			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
-		}
-	}
+        
+        stage('Run Unit Tests') {
+            steps {
+                script {
+                    echo "Entered Unit Test Stage"
+                }
+            }
+        }
+        
+        stage('Code Quality Check via SonarQube') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQube';
+                    withSonarQubeEnv('SonarQube EMA') {
+                        bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
+                    }
+                }
+            }       
+        }
+        
+        stage('OWASP DependencyCheck') {
+            steps {
+                dependencyCheck additionalArguments: '--format HTML --format XML --nvdApiKey 7ad48849-c21a-49f4-9ddb-85151d39d039 --noupdate --enableExperimental', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+            }
+        }
+    }
+    
+    post {
+        success {
+            dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+        }
+    }
 }
