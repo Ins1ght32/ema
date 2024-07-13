@@ -7,7 +7,6 @@ pipeline {
 			}
 		}
 		
-		stages {
         stage('Check and Run Front End') {
             steps {
                 script {
