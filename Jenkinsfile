@@ -8,15 +8,15 @@ pipeline {
 		}
 		
 		stage('Code Quality Check via SonarQube') {
-            steps {
-                script {
-                    def scannerHome = tool 'SonarQube';
-                        withSonarQubeEnv('SonarQube EMA') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.python.coverage.reportPaths=${COVERAGE_REPORT_PATH}"
-                    }
-                }
-            }
-        }
+            		steps {
+                		script {
+                    			def scannerHome = tool 'SonarQube';
+                       			withSonarQubeEnv('SonarQube EMA') {
+                        			sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.python.coverage.reportPaths=${COVERAGE_REPORT_PATH}"
+                    			}
+                		}
+            		}		
+        	}
 		
 		stage('OWASP DependencyCheck') {
 			steps {
