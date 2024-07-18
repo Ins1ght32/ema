@@ -21,11 +21,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube';
                     withSonarQubeEnv('SonarQube EMA') {
-                        if (isUnix()) {
-                            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
-                        } else {
-                            bat "${scannerHome}/bin/sonar-scanner.bat -Dsonar.projectKey=EMA -Dsonar.sources=."
-                        }
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.host.url=http://172.30.141.123:9000 -Dsonar.token=172.30.141.123"
                     }
                 }
             }       
