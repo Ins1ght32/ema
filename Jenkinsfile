@@ -21,7 +21,8 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube';
                     withSonarQubeEnv('SonarQube EMA') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.host.url=http://172.30.141.123:9000 -Dsonar.token=172.30.141.123"
+                        //sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.host.url=http://172.30.141.123:9000 -Dsonar.token=172.30.141.123"
+						sh "mvn clean verify sonar:sonar -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.host.url=http://172.30.141.123:9000 -Dsonar.token=172.30.141.123"
                     }
                 }
             }       
