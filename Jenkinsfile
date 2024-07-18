@@ -21,7 +21,11 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube';
                     withSonarQubeEnv('SonarQube EMA') {
-                        bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
+                        if (isUnix()) {
+                            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=."
+                        } else {
+                            bat "${scannerHome}/bin/sonar-scanner.bat -Dsonar.projectKey=EMA -Dsonar.sources=."
+                        }
                     }
                 }
             }       
