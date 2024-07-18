@@ -10,6 +10,12 @@ import spacy
 from string import punctuation
 from nltk.stem import PorterStemmer
 import warnings
+from dotenv import load_dotenv
+import os
+'''
+import os
+from flask_wtf.csrf import CSRFProtect, generate_csrf
+'''
 
 # Suppress specific warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -17,6 +23,11 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 # Initialize Flask app
 app = Flask(__name__)
+'''
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
+csrf = CSRFProtect(app)
+'''
 
 # Load Tapas model and tokenizer (Locally)
 model_name = "google/tapas-large-finetuned-wtq"
@@ -242,12 +253,12 @@ def read_data_from_db(host, user, password, database, port):
         if connection.is_connected():
             connection.close()
 
-# Database and user details
-host = '192.168.1.31'
-user = 'root'
-password = 'root'
-database = 'ema_eos'
-port = '3307'
+# Access the environment variables
+host = os.getenv('DB_HOST')
+user = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+database = os.getenv('DB_DATABASE')
+port = os.getenv('DB_PORT')
 
 # Load data from database at the start of the server
 df = read_data_from_db(host, user, password, database, port)
@@ -390,8 +401,9 @@ def query():
                 for row, column in answers:
                     product_name = df.iat[row, df.columns.get_loc('product_name')]
                     version = df.iat[row, df.columns.get_loc('version_number')]
-                    eos_date = df.iat[row, df.columns.get_loc('eos_date')]
-                    formatted_answers.append(f"{product_name} version {version}, EOS date: {eos_date} <br /><br />")
+                    # eos_date = df.iat[row, df.columns.get_loc('eos_date')]
+                    the_ans = df.iat[row, column]
+                    formatted_answers.append(f"{product_name} version {version}, Answer: {the_ans} <br /><br />")
 
                 # Join formatted answers into a single string
                 joined_answers = ", ".join(formatted_answers)
@@ -405,6 +417,13 @@ def query():
     else:
         return jsonify({"error": "Unexpected result type."}), 500
 
+'''
+@app.route('/getCSRFToken', methods=['GET'])
+@csrf.exempt
+def get_csrf_token():
+    token = generate_csrf()
+    return jsonify({'csrf_token': token})
+'''
 
 if __name__ == '__main__':
     app.run(debug=True)

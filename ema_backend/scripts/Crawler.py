@@ -503,7 +503,7 @@ class Crawler:
                 print(f"An error occurred: {e}")
         
         if product_name == "Microfocus":
-            url = "http://www.microfocus.com/productlifecycle/lifecycle_list_search.jsp?list=0&attachmate=true&netiq=true&novell=true&suse=false"
+            url = "https://www.microfocus.com/productlifecycle/lifecycle_list_search.jsp?list=0&attachmate=true&netiq=true&novell=true&suse=false"
 
             try:
                 # Send GET request
@@ -518,7 +518,7 @@ class Crawler:
                         if (product.get('name') in software_version or software_version in product.get('name')):
                             prod_id = product.get('prod_id')
                             # print(prod_id)
-                            children_url = f"http://www.microfocus.com/productlifecycle/lifecycle_subrows.jsp?lt_id={prod_id}&parent_ids={prod_id}"
+                            children_url = f"https://www.microfocus.com/productlifecycle/lifecycle_subrows.jsp?lt_id={prod_id}&parent_ids={prod_id}"
                             # print(children_url)
 
                             try:

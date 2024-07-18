@@ -13,12 +13,12 @@ app.use(session({
   secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set to true if using HTTPS
+  cookie: { secure: true } // Set to true if using HTTPS
 }));
 
 // Set up CORS to allow requests from frontend
 const corsOptions = {
-  origin: ['http://localhost:3030', 'http://127.0.0.1:3030'],
+  origin: ['https://localhost:3030', 'https://127.0.0.1:3030'],
   credentials: true,
   optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };

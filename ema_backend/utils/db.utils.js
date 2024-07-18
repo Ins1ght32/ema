@@ -12,15 +12,11 @@ const connection = mysql.createConnection({
 */
 
 const connection = mysql.createConnection({
-  //host: process.env.DB_HOST,
-  //user: process.env.DB_USER,
-  //password: process.env.DB_PASSWORD,
-  //database: process.env.DB,
-  //port: process.env.DB_PORT
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'toor',
-  database: 'ema_eos'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB,
+  port: process.env.DB_PORT
 });
 
 connection.connect(error => {

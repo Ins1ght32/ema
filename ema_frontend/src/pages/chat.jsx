@@ -20,7 +20,7 @@ export default function Chat() {
 
     // Send the message to the backend
     try {
-      const response = await fetch('http://localhost:6969/queryChatbot', {
+      const response = await fetch('https://localhost:6969/queryChatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

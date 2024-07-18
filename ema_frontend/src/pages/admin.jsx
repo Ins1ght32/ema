@@ -48,7 +48,7 @@ export default function Admin() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:6969/users', {
+    fetch('https://localhost:6969/users', {
       method: 'GET',
       credentials: 'include',
     })
@@ -77,7 +77,7 @@ export default function Admin() {
   const handleAddUserClose = () => setOpenAddUser(false);
 
   const handleAddUserSubmit = () => {
-    fetch('http://localhost:6969/users', {
+    fetch('https://localhost:6969/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export default function Admin() {
   };
 
   const handleUpdateUserSubmit = () => {
-    fetch(`http://localhost:6969/users/${selectedUser.id}`, {
+    fetch(`https://localhost:6969/users/${selectedUser.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export default function Admin() {
   };
 
   const handleDeleteUser = (id) => {
-    fetch(`http://localhost:6969/users/${id}`, {
+    fetch(`https://localhost:6969/users/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

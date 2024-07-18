@@ -12,7 +12,7 @@ export default function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:6969/login', {
+      const response = await fetch('https://localhost:6969/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

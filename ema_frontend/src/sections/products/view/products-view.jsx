@@ -81,58 +81,10 @@ export default function ProductsView() {
   const handleClickCloseDeleteBulkHostnames = () => {
     setOpenDeleteBulkHostnamesForm(false);
   }
-
-
-
-  /*
-  const handleDownload = async () => {
-    try {
-      const categoryID = sessionStorage.getItem("categoryID");
-      const vendorID = sessionStorage.getItem("vendorID"); 
-
-      const selectedColumns = ['products_id', 'product_name', 'category_name', 'vendor_name', 'version_number', 'target_version', 'eos_date'];
-
-      const requestBody = {
-        dataState: rows.map(row => {
-          const selectedData = {};
-          selectedColumns.forEach(col => {
-            selectedData[col] = row[col];
-          });
-          return selectedData;
-        }),
-        categoryID,
-        vendorID,
-      };
-
-      const response = await fetch('/download-csv', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'data.csv');
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    } catch (error) {
-      console.error('Error downloading the CSV file', error);
-    }
-  };
-  */
   
   const handleAddSubmit = async (formData) => {
     setLoading(true);
-    const response = await fetch("http://localhost:6969/add-product", {
+    const response = await fetch("https://localhost:6969/add-product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -153,7 +105,7 @@ export default function ProductsView() {
 
   const handleCrawlNow = async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:6969/crawlNow", {
+    const response = await fetch("https://localhost:6969/crawlNow", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -182,7 +134,7 @@ export default function ProductsView() {
       formData.crawlNow = "yes";
     }
 
-    const response = await fetch("http://localhost:6969/edit-product", {
+    const response = await fetch("https://localhost:6969/edit-product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -212,7 +164,7 @@ export default function ProductsView() {
     const sendIDs = { "id": rowDataArray};
     console.log(sendIDs);
     
-    const response = await fetch("http://localhost:6969/delete-product", {
+    const response = await fetch("https://localhost:6969/delete-product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -245,7 +197,7 @@ export default function ProductsView() {
       selectedRowData: Array.from(formData.selectedRowData)
   };
 
-    const response = await fetch("http://localhost:6969/bulk-add-hostnames", {
+    const response = await fetch("https://localhost:6969/bulk-add-hostnames", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -274,7 +226,7 @@ export default function ProductsView() {
 
   console.log(formDataToSend);
 
-    const response = await fetch("http://localhost:6969/bulk-delete-hostnames", {
+    const response = await fetch("https://localhost:6969/bulk-delete-hostnames", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -296,7 +248,7 @@ export default function ProductsView() {
 
   const fetchData = async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:6969/all-products");
+    const response = await fetch("https://localhost:6969/all-products");
 
     const json = await response.json();
 
@@ -314,7 +266,7 @@ export default function ProductsView() {
     setLoading(true);
     const categoryID = sessionStorage.getItem("categoryID");
     const vendorID = sessionStorage.getItem("vendorID"); 
-    const response = await fetch(`http://localhost:6969/all-products-query?categoryID=${categoryID}&vendorID=${vendorID}`);
+    const response = await fetch(`https://localhost:6969/all-products-query?categoryID=${categoryID}&vendorID=${vendorID}`);
 
     const json = await response.json();
 
@@ -336,7 +288,7 @@ export default function ProductsView() {
   }, []);
 
   const getCrawlTime = async () => {
-    const response = await fetch('http://localhost:6969/crawl-time');
+    const response = await fetch('https://localhost:6969/crawl-time');
     const json = await response.json();
 
     if (response.ok) {
@@ -627,13 +579,7 @@ export default function ProductsView() {
             </>
             );
         }
-        /*
-        return (
-          <Tooltip title={tooltipContent}>
-            <span>Hover me</span>
-          </Tooltip>
-        );
-        */
+
         return (
           <div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', width: '100%', height: '100%' }}>
           <Tooltip title={tooltipContent}>
@@ -775,18 +721,7 @@ export default function ProductsView() {
               Delete Product
           </Button>
         </Grid>
-        {/*
-        <Grid item>
-          <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />} onClick={handleClickOpenAddBulkHostnames}>
-              Add Hostnames
-          </Button>
-        </Grid>
-        <Grid item>
-          <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:minus-fill" />} onClick={handleClickOpenDeleteBulkHostnames}>
-              Delete Hostnames
-          </Button>
-        </Grid>
-        */}
+        {}
       </Grid>
 
       <AddForm open={openAddForm} onClose={handleClickCloseAdd} onSubmit={handleAddSubmit} />
