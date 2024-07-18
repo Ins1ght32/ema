@@ -30,9 +30,6 @@ pipeline {
     }
     
     post {
-		always{
-			recordIssues enabledForFailure: true, tool: sonarQube()
-		}
         success {
             dependencyCheckPublisher pattern: 'dependency-check-report.xml'
         }
