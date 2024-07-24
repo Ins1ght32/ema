@@ -14,6 +14,7 @@ pipeline {
 					echo "Stopping and Removing"
 					sleep(time: 12, unit: 'SECONDS') 
 				}
+			}
 		}
 		
 		stage('Install Dependencies & Deploy New Test Environment') {
@@ -22,6 +23,7 @@ pipeline {
 					echo "Deploy"
 					sleep(time: 13, unit: 'SECONDS')
 				}
+			}
 		}
 		
 		
@@ -29,6 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "Entered Unit Test Stage"
+					sleep(time: 115, unit: 'SECONDS')
                 }
             }
         }
