@@ -7,8 +7,25 @@ pipeline {
                 git 'https://github.com/Ins1ght32/ema.git'
             }
         }
-        
-        stage('Run Unit Tests') {
+		
+		stage('Stop and Remove Current Test Environment') {
+			steps{
+				script{
+					echo "Stopping and Removing"
+					sleep(time: 12, unit: 'SECONDS') 
+				}
+		}
+		
+		stage('Install Dependencies & Deploy New Test Environment') {
+			steps{
+				script{
+					echo "Deploy"
+					sleep(time: 13, unit: 'SECONDS')
+				}
+		}
+		
+		
+		stage('Run Unit Tests') {
             steps {
                 script {
                     echo "Entered Unit Test Stage"
@@ -25,7 +42,6 @@ pipeline {
                 }
             }       
         }
-        
     }
     
     post {
