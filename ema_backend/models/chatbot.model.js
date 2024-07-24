@@ -6,7 +6,7 @@ const Chatbot = () => {
 
 Chatbot.queryFlask = async (data, result) => {
     try {
-        const flaskResponse = await axios.post('https://localhost:5000/query', data, {
+        const flaskResponse = await axios.post('http://localhost:5000/query', data, {
             headers: {
                 'Content-Type': 'application/json',
             },

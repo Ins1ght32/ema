@@ -6,6 +6,15 @@ const ensureAdmin = (req, res, next) => {
   }
 };
 
+const ensureLoggedIn = (req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.status(403).send({ message: "Forbidden" });
+  }
+}
+
 module.exports = {
   ensureAdmin,
+  ensureLoggedIn,
 };

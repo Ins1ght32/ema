@@ -27,10 +27,11 @@ exports.loginUser = async (req, res) => {
 
         if (isMatch) {
           req.session.user = user;
-          console.log("Session after login:", req.session);  // Added log to check session
+	  const { password, ...userWithoutPassword } = user;
+          // console.log("Session after login:", req.session);  // Added log to check session
           res.json({
             message: "Login successful",
-            user,
+	    user: userWithoutPassword,
           });
         } else {
           res.status(401).send({

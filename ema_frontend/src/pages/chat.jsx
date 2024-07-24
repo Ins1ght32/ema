@@ -10,6 +10,29 @@ export default function Chat() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const extractDate = (str) => {
+	const datePattern = /\d{2} \w+ \d{4}/;
+	const match = str.match(datePattern);
+	return match ? match[0] : null
+};
+
+  const formatResponse = (str) => {
+	const dateString = extractDate(str);
+	if (!dateString) {
+		return str;
+	}
+	
+	const targetDate = new Date ("01 January 1970");
+	const inputDate = new Date(dateString);
+
+	let answer = dateString;
+	if (inputDate.getTime() === targetDate.getTime()) {
+		answer = "Not Crawled";
+	}
+	
+	return str.replace(dateString, answer);
+};
+
   const handleSend = async () => {
     if (input.trim() === '') return;
 
@@ -20,7 +43,7 @@ export default function Chat() {
 
     // Send the message to the backend
     try {
-      const response = await fetch('https://localhost:6969/queryChatbot', {
+      const response = await fetch(`${import.meta.env.VITE_WEBSITE_BACKEND_URL}/queryChatbot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,9 +53,10 @@ export default function Chat() {
       const data = await response.json();
       console.log(data);
 
+      const currentMessage = formatResponse(data.answer);
 
       // Update messages with the sent message and the response
-      setMessages((prevMessages) => [...prevMessages, newMessage, { type: 'received', text: data.answer }]);
+      setMessages((prevMessages) => [...prevMessages, newMessage, { type: 'received', text: currentMessage }]);
     } catch (error) {
       console.error('Error sending message:', error);
     } finally {

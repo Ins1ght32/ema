@@ -1,0 +1,12 @@
+{
+  "name": "ema-eos",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd ema_backend && node app.js",
+    "start-frontend": "cd ema_frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1"
+  }
+}

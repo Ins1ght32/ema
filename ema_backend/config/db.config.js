@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
-    HOST: "192.168.1.31",
-    USER: "root",
-    PASSWORD: "root",
-    DB: "ema_eos",
-    PORT: "3307",
-  };
+    HOST: process.env.DB_HOST,
+    USER: process.env.DB_USER,
+    PASSWORD: process.env.DB_PASSWORD,
+    DB: process.env.DB_NAME,
+    PORT: process.env.DB_PORT,
+};

@@ -12,6 +12,16 @@ from nltk.stem import PorterStemmer
 import warnings
 from dotenv import load_dotenv
 import os
+
+load_dotenv()
+
+# Database and user details
+host = os.getenv('DB_HOST')
+user = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+database = os.getenv('DB_DATABASE')
+port = os.getenv('DB_PORT')
+
 '''
 import os
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -204,7 +214,7 @@ def process_query(input_table, query):
         results = scrape_websites_for_info(search_query)
         return None, None, results
 
-    inputs = tokenizer(table=input_table, queries=[query], padding="max_length", return_tensors="pt")
+    inputs = tokenizer(table=input_table, queries=[query], padding="max_length", truncation=True, return_tensors="pt")
     outputs = model(**inputs)
     return outputs, inputs, input_table
 
@@ -252,13 +262,6 @@ def read_data_from_db(host, user, password, database, port):
     finally:
         if connection.is_connected():
             connection.close()
-
-# Access the environment variables
-host = os.getenv('DB_HOST')
-user = os.getenv('DB_USER')
-password = os.getenv('DB_PASSWORD')
-database = os.getenv('DB_DATABASE')
-port = os.getenv('DB_PORT')
 
 # Load data from database at the start of the server
 df = read_data_from_db(host, user, password, database, port)
@@ -426,4 +429,4 @@ def get_csrf_token():
 '''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

@@ -48,7 +48,7 @@ export default function Admin() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://localhost:6969/users', {
+    fetch(`${import.meta.env.VITE_WEBSITE_BACKEND_URL}/users`, {
       method: 'GET',
       credentials: 'include',
     })
@@ -77,7 +77,7 @@ export default function Admin() {
   const handleAddUserClose = () => setOpenAddUser(false);
 
   const handleAddUserSubmit = () => {
-    fetch('https://localhost:6969/users', {
+    fetch(`${import.meta.env.VITE_WEBSITE_BACKEND_URL}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ export default function Admin() {
   };
 
   const handleUpdateUserSubmit = () => {
-    fetch(`https://localhost:6969/users/${selectedUser.id}`, {
+    fetch(`${import.meta.env.VITE_WEBSITE_BACKEND_URL}/users/${selectedUser.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export default function Admin() {
   };
 
   const handleDeleteUser = (id) => {
-    fetch(`https://localhost:6969/users/${id}`, {
+    fetch(`${import.meta.env.VITE_WEBSITE_BACKEND_URL}/users/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
