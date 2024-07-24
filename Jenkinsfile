@@ -20,10 +20,8 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'SonarQube';
-                    withSonarQubeEnv('SonarQube EMA') {
                         //sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA -Dsonar.sources=. -Dsonar.host.url=http://172.30.141.123:9000 -Dsonar.token=172.30.141.123"
-						sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA2 -Dsonar.sources=. -Dsonar.host.url=http://192.168.1.188:9000 -Dsonar.token=sqp_da994e8688dc6fb3154811d36049dee9a34a5d4c"
-                    }
+		    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=EMA2 -Dsonar.sources=. -Dsonar.host.url=http://192.168.1.188:9000 -Dsonar.token=sqp_da994e8688dc6fb3154811d36049dee9a34a5d4c"
                 }
             }       
         }
